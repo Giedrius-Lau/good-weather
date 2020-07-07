@@ -1,0 +1,84 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin linear-gradient($direction, $color1, $color2, $color3) {
+  background-image: -webkit-linear-gradient(
+    $direction,
+    $color1,
+    $color2,
+    $color3
+  );
+  background-image: -moz-linear-gradient($direction, $color1, $color2, $color3);
+  background-image: -o-linear-gradient($direction, $color1, $color2, $color3);
+  background-image: -ms-linear-gradient($direction, $color1, $color2, $color3);
+  background-image: linear-gradient($direction, $color1, $color2, $color3);
+}
+
+@mixin for-size($size) {
+  @if $size == small-mobile {
+    @media (max-width: 375px) {
+      @content;
+    }
+  } @else if $size == small-mobile-up {
+    @media (min-width: 376px) {
+      @content;
+    }
+  } @else if $size == large-mobile {
+    @media (max-width: 425px) {
+      @content;
+    }
+  } @else if $size == large-mobile-up {
+    @media (min-width: 426px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $size == mobile-up {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $size == tablet-up {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == desktop-to-large-desktop {
+    @media (min-width: 1200px) and (max-width: 1439px) {
+      @content;
+    }
+  } @else if $size == large-desktop {
+    @media (max-width: 1439px) {
+      @content;
+    }
+  } @else if $size == large-desktop-up {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}

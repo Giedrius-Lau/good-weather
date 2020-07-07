@@ -1,0 +1,166 @@
+@import "./fonts";
+@import "./mixins";
+
+$list-color: #898fa1;
+$white-color: #fefefe;
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "TitilliumWeb-Regular", serif;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+@keyframes gradient {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -500%;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 15px auto;
+  background-color: $white-color;
+  z-index: 2;
+  box-shadow: 0 10px 220px rgba(0, 0, 0, 0.4);
+
+  .container__section {
+    padding: 0 15px;
+
+    &.container__section--flex {
+      display: flex;
+    }
+
+    .form-control {
+      margin-right: 10px;
+    }
+  }
+}
+
+.error-message {
+  font-family: "TitilliumWeb-Regular", serif;
+  color: #fd2323;
+  text-align: center;
+}
+
+.form-control {
+  font-family: "TitilliumWeb-Regular", serif;
+  height: 41px;
+  padding: 0 18px;
+  font-size: 17px;
+  background: $white-color;
+  border-radius: 40px;
+  border: none;
+  color: #414454;
+  box-shadow: 6px 10px 9px rgba(65, 68, 84, 0.02);
+  margin-bottom: 10px;
+  width: 100%;
+  @include transition(box-shadow 0.3s);
+
+  &:hover {
+    box-shadow: 7px 12px 11px rgba(65, 68, 84, 0.06);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  font-family: "TitilliumWeb-Regular", serif;
+  border-radius: 40px;
+  height: 40px;
+  font-size: 15px;
+  padding: 0 24px 2px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: #878e9e;
+  border: 0;
+  color: $white-color;
+  opacity: 0.8;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.list-view.container__section {
+  width: 100%;
+  margin: 0 auto 20px;
+  background: #898fa1;
+  padding-bottom: 20px;
+
+  .city-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      color: $white-color;
+    }
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    color: $white-color;
+  }
+}
+
+form {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+}
+
+.weather-marker {
+  background-color: #fff0b9;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0 3px 10px rgba(117, 117, 117, 0.3);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
